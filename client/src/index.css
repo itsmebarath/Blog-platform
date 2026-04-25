@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-amber/50 rounded-full hover:bg-amber;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Prose styles for post content */
+.prose {
+  @apply max-w-none text-lg leading-relaxed;
+}
+
+.prose p {
+  @apply mb-6;
+}
+
+.prose h2 {
+  @apply text-3xl mt-12 mb-6;
+}
+
+.prose h3 {
+  @apply text-2xl mt-8 mb-4;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-amber pl-6 italic my-8;
+}
+
+.prose pre {
+  @apply bg-ink text-cream p-4 rounded-lg overflow-x-auto my-8 font-mono text-sm;
+}
